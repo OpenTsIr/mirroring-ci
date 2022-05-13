@@ -25,5 +25,7 @@ add required deployment tasks to post-receive hook at .git/hooks
 if there is no file, then create one
 make post-receive executable: chmod +x post-receive
 
+mandatory ** git --work-tree=$PROJECT_DIRECTORY --git-dir=$PROJECT_DIRECTORY/.git checkout main $PROJECT_DIRECTORY
+
 [TASK 6]
 test deployment process
