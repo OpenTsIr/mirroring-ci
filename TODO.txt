@@ -1,0 +1,29 @@
+[TASK 1]
+create project directory and init bare repository
+mkdir project_name
+cd project_name
+git init --bare .git ------------------------------------,
+                                                         |
+[TASK 2]                                                 |
+add this repo to gitlab to mirror project on every push  |
+ssh://user@domain/path/to/.git/folder  <-----------------'
+Example: ssh://user1@miad.dev/home/user1/mirroring/.git
+
+[TASK 3]
+add gitlab public key to ~/.ssh/authorized_keys
+if there is no authorized_keys, then do this steps
+mkdir ~/.ssh
+chmod 700 ~/.ssh
+touch ~/.ssh/authorized_keys
+chmod 600 ~/.ssh/authorized_keys
+
+[TASK 4]
+run sync using button at gitlab project repository setting
+
+[TASK 5]
+add required deployment tasks to post-receive hook at .git/hooks
+if there is no file, then create one
+make post-receive executable: chmod +x post-receive
+
+[TASK 6]
+test deployment process
